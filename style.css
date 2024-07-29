@@ -1,0 +1,213 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Ruda:wght@400;600;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url("https://cloudfront-us-east-1.images.arcpublishing.com/infobae/RJ6OX45R4RBX3CDDLR45VZCTRI.jpg");
+  background-size: cover;
+  font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  color: #fff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+  padding: 20px; /* Añadido para espaciar el contenido del borde del body */
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  background-color: rgba(44, 62, 80, 0.85);
+  color: #ecf0f1;
+  border-radius: 25px;
+  box-shadow: 0 15px 15px rgba(0, 0, 0, 0.3);
+  padding: 20px;
+  margin-bottom: 20px; /* Añadido para espaciar el contenedor de otros elementos */
+}
+
+h1 {
+  font-family: 'Ruda', sans-serif;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+.img_section {
+  border-radius: 25px;
+  background-image: url("https://i0.wp.com/enlacelatinonc.org/wp-content/uploads/2022/06/El-Clima-1.jpg?fit=1200%2C676&ssl=1");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  height: 200px;
+}
+
+.img_section::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(44, 62, 80, 0.7) 10%, rgba(44, 62, 80, 0.9) 100%);
+  border-radius: 25px;
+}
+
+.default_info {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.default_info img {
+  width: 80%;
+  object-fit: cover;
+  margin: 0 auto;
+}
+
+.default_info h2 {
+  font-size: 2.5rem;
+}
+
+.default_info h3 {
+  font-size: 1.5rem;
+  text-transform: capitalize;
+}
+
+.weather_temp {
+  font-size: 4rem;
+  font-weight: 800;
+}
+
+/* content section */
+.content_section {
+  padding: 1.5rem;
+}
+
+.content_section form {
+  margin: 1.5rem 0;
+  position: relative;
+}
+
+.content_section form input {
+  width: 84%;
+  outline: none;
+  background: transparent;
+  border: 1px solid #ecf0f1;
+  border-radius: 5px;
+  padding: 0.7rem 1rem;
+  font-family: inherit;
+  color: #ecf0f1;
+  font-size: 1.5rem;
+}
+
+.content_section form button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  padding: 0.7rem 1rem;
+  font-family: inherit;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  background: #2980b9;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.content_section form button:hover {
+  background-color: #3498db;
+}
+
+.day_info .content {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+}
+
+.day_info .content .title {
+  font-weight: 600;
+}
+
+.list_content ul {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style-type: none;
+  margin: 3rem 0;
+  padding: 0;
+}
+
+.list_content ul li {
+  padding: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 1rem;
+  transition: all 0.3s ease-in;
+}
+
+.list_content ul li:hover {
+  transform: scale(1.1);
+  background-color: #2ecc71;
+  color: #fff;
+  cursor: pointer;
+}
+
+.list_content ul li img {
+  width: 50%;
+  object-fit: cover;
+}
+
+#weather-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+#weather-table th, #weather-table td {
+  border: 1px solid #ecf0f1;
+  padding: 10px;
+  text-align: left;
+  background-color: rgba(236, 240, 241, 0.1);
+}
+
+#weather-table th {
+  background-color: rgba(236, 240, 241, 0.2);
+}
+
+#map {
+  height: 400px;
+  width: 100%;
+  margin-top: 20px;
+  border-radius: 25px;
+  overflow: hidden;
+}
+
+.icons {
+  opacity: 0;
+}
+
+.icons.fadeIn {
+  animation: 0.5s fadeIn forwards;
+  animation-delay: 0.7s;
+}
+
+@keyframes fadeIn {
+  to {
+    transition: all 0.5s ease-in;
+    opacity: 1;
+  }
+}
