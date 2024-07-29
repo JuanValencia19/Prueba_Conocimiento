@@ -62,7 +62,7 @@ async function findLocation(name) {
       // Mostrar imagen en caso de que no coloque una ciudad o pais correctamente
       const ImageContent = displayImageContent(result);
 
-      // display right side content
+      
       const rightSide = rightSideContent(result);
 
       // funcion para los pronosticos
