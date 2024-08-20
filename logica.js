@@ -53,10 +53,36 @@ async function findLocation(name) {
   listContentEl.innerHTML = "";
   try {
     const API_URL = `https://api.openweathermap.org/data/2.5/weather?q=${name}&appid=${API}`;
+<<<<<<< HEAD
     const response = await fetch(API_URL);
     
     if (!response.ok) {  // Si la respuesta no es 'ok', se lanza un error
       throw new Error(response.status);
+=======
+    const data = await fetch(API_URL);
+    const result = await data.json();
+    console.log(result);
+
+    if (result.cod !== "404") {
+      // Mostrar imagen en caso de que no coloque una ciudad o pais correctamente
+      const ImageContent = displayImageContent(result);
+
+      
+      const rightSide = rightSideContent(result);
+
+      // funcion para los pronosticos
+      displayForeCast(result.coord.lat, result.coord.lon);
+
+      setTimeout(() => {
+        iconsContainer.insertAdjacentHTML("afterbegin", ImageContent);
+        iconsContainer.classList.add("fadeIn");
+        dayInfoEl.insertAdjacentHTML("afterbegin", rightSide);
+      }, 1500);
+    } else {
+      const message = `<h2 class="weather_temp">${result.cod}</h2>
+      <h3 class="cloudtxt">${result.message}</h3>`;
+      iconsContainer.insertAdjacentHTML("afterbegin", message);
+>>>>>>> 3a6f4b1189e0451659b89a0a3ce592179f57829d
     }
 
     const result = await response.json();
